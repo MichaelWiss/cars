@@ -1,12 +1,15 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { changeName } from '../store';
 
 
 function CarForm() {
-
+    const dispatch = useDispatch();
+    const name = useSelector((state) => {
+        return state.form.name;
+    });
 
     const handleNameChange = (event) => {
-        dispatchEvent(changeName(event.target.value));
+        dispatch(changeName(event.target.value));
     };
 
 
@@ -18,7 +21,7 @@ function CarForm() {
                     <label htmlFor="" className="label">Name</label>
                     <input type="text" className="input is-expanded" 
                         value={name}
-                        onchange={handleNameChange}
+                        onChange={handleNameChange}
                     />
                 </div>
             </div>
