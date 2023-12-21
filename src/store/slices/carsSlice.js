@@ -15,7 +15,7 @@ const carsSlice = createSlice({
             //action.payload === { name: 'ab', cost: 140 }
             state.data.push({
                 name: action.payload.name,
-                const: action.payload.cost,
+                cost: action.payload.cost,
                 id: nanoid(),
             });
         },
