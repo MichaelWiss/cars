@@ -5,7 +5,16 @@ function CarList() {
         return state.cars.data;
     });
 
-    console.log(cars);
+    const renderedCars = cars.map((car) => {
+        return (
+            <div key={car.id} className="panel">
+                <p>
+                    {car.name} - ${car.cost}
+                </p>
+            </div>
+        );
+    });
+    
 
     return <div>CarList</div>
 }
