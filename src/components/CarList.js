@@ -8,7 +8,7 @@ function CarList() {
     });
 
     const handleCarDelete = (car) => {
-        dispatch(removeCar(car.id))
+        dispatch(removeCar(car.id));
     };
 
     const renderedCars = cars.map((car) => {
